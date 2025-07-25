@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pywinsor2"
+version = "0.1.0"
+description = "Python implementation of Stata's winsor2 command for winsorizing and trimming data"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Bryce Wang", email = "brycew6m@stanford.edu"}
+]
+maintainers = [
+    {name = "Bryce Wang", email = "brycew6m@stanford.edu"}
+]
+keywords = ["stata", "winsor", "winsorize", "trim", "outliers", "data-cleaning", "pandas"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "pandas>=1.3.0",
+    "numpy>=1.20.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/brycewang-stanford/pywinsor2"
+Repository = "https://github.com/brycewang-stanford/pywinsor2"
+Issues = "https://github.com/brycewang-stanford/pywinsor2/issues"
+Documentation = "https://github.com/brycewang-stanford/pywinsor2#readme"
+
+[tool.setuptools.packages.find]
+include = ["pywinsor2*"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
