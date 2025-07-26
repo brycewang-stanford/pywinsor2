@@ -1,5 +1,13 @@
 # pywinsor2
 
+[![PyPI version](https://badge.fury.io/py/pywinsor2.svg)](https://badge.fury.io/py/pywinsor2)
+[![Downloads](https://static.pepy.tech/badge/pywinsor2)](https://pepy.tech/project/pywinsor2)
+[![Downloads](https://static.pepy.tech/badge/pywinsor2/month)](https://pepy.tech/project/pywinsor2)
+[![Downloads](https://static.pepy.tech/badge/pywinsor2/week)](https://pepy.tech/project/pywinsor2)
+[![Python Versions](https://img.shields.io/pypi/pyversions/pywinsor2.svg)](https://pypi.org/project/pywinsor2/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/brycewang-stanford/pywinsor2.svg?style=social&label=Star)](https://github.com/brycewang-stanford/pywinsor2)
+
 Python implementation of Stata's `winsor2` command for winsorizing and trimming data.
 
 ## Installation
