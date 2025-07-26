@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pywinsor2"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python implementation of Stata's winsor2 command for winsorizing and trimming data"
 readme = "README.md"
 license = "MIT"
