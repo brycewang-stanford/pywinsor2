@@ -1,3 +1,31 @@
+# ⚠️ ARCHIVED REPOSITORY
+
+**This repository has been archived and is no longer maintained.**
+
+**Please use the new unified package: [Py-Stata-Commands](https://github.com/brycewang-stanford/Py-Stata-Commands)**
+
+## Migration Guide
+
+### Old Usage (pywinsor2):
+```python
+import pywinsor2 as pw2
+result = pw2.winsor2(data, ['wage'])
+```
+
+### New Usage (py-stata-commands):
+```python
+from py_stata_commands.winsor2 import winsor2
+result = winsor2(data, ['wage'])
+```
+
+To install the new unified package:
+```bash
+pip uninstall pywinsor2  # Remove old package
+pip install py-stata-commands  # Install unified package
+```
+
+---
+
 # pywinsor2
 
 [![PyPI version](https://badge.fury.io/py/pywinsor2.svg)](https://badge.fury.io/py/pywinsor2)
