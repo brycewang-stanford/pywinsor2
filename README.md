@@ -196,11 +196,11 @@ result, summary = pw2.winsor2(
 ```
 
 ### 💡 **Why Upgrade from Stata winsor2?**
-1. ** Same Reliable Results**: All core Stata functionality preserved
-2. ** Enhanced Capabilities**: 6 powerful new features Stata doesn't offer
-3. ** Better Workflow**: Detailed reporting and data preservation
-4. ** Python Ecosystem**: Seamless integration with pandas, numpy, and modern data science tools
-5. ** Open Source**: No licensing restrictions, full transparency
+1. **Same Reliable Results**: All core Stata functionality preserved
+2. **Enhanced Capabilities**: 6 powerful new features Stata doesn't offer
+3. **Better Workflow**: Detailed reporting and data preservation
+4. **Python Ecosystem**: Seamless integration with pandas, numpy, and modern data science tools
+5. **Open Source**: No licensing restrictions, full transparency
 
 ## Main Function
 
@@ -379,7 +379,7 @@ result, summary = pw2.winsor2(
 
 ---
 
-** Ready to upgrade your winsorization workflow? Try pywinsor2 v0.2.0 today and experience the power of enhanced data preprocessing!**
+**Ready to upgrade your winsorization workflow? Try pywinsor2 v0.2.0 today and experience the power of enhanced data preprocessing!**
 
 ## 📄 License
 
