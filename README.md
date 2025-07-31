@@ -59,11 +59,12 @@ pip install pywinsor2
 
 ## **For Stata Users: Easy Migration Guide**
 
+
 ### **Immediate Benefits for Stata Users**
-- ** Same Results**: Your existing winsor2 workflows will produce identical results
-- ** Enhanced Power**: Access 6 new features that Stata doesn't offer  
-- ** Python Ecosystem**: Leverage pandas, matplotlib, scikit-learn integration
-- ** Cost Savings**: No Stata license required for winsorization tasks
+- **Same Results**: Your existing winsor2 workflows will produce identical results
+- **Enhanced Power**: Access 6 new features that Stata doesn't offer
+- **Python Ecosystem**: Leverage pandas, matplotlib, scikit-learn integration
+- **Cost Savings**: No Stata license required for winsorization tasks
 
 ### **Quick Translation Examples**
 ```stata
@@ -328,7 +329,7 @@ result, summary = pw2.winsor2(
 )
 ```
 
-## 📊 Stata vs. pywinsor2 Comparison
+## Stata vs. pywinsor2 Comparison
 
 ### Core Functionality Parity
 | Stata Command | pywinsor2 Equivalent | Status |
@@ -339,42 +340,42 @@ result, summary = pw2.winsor2(
 | `winsor2 wage, by(industry)` | `pw2.winsor2(df, ['wage'], by='industry')` | ✅ **Perfect Match** |
 | `winsor2 wage, replace` | `pw2.winsor2(df, ['wage'], replace=True)` | ✅ **Perfect Match** |
 
-### 🚀 **Exclusive pywinsor2 Advantages**
+### **Exclusive pywinsor2 Advantages**
 | Feature | Stata winsor2 | pywinsor2 v0.2.0 | Advantage |
 |---------|---------------|-------------------|-----------|
-| **Asymmetric Cuts** | ❌ Not supported | ✅ `cutlow=2, cuthigh=98` | 🔥 **Superior Control** |
-| **Processing Reports** | ❌ Minimal feedback | ✅ `verbose=True` detailed summaries | 📊 **Better Insights** |
-| **Flag Generation** | ❌ Manual workaround needed | ✅ `genflag='_outlier'` automatic | 🏷️ **Streamlined Workflow** |
-| **Extreme Value Storage** | ❌ Values lost forever | ✅ `genextreme=('_low', '_high')` | 💾 **Data Preservation** |
-| **Variable-Specific Cuts** | ❌ Same cuts for all vars | ✅ `var_cuts={'wage':(1,99), 'ret':(5,95)}` | 🎛️ **Precision Control** |
-| **Combined Features** | ❌ Limited combinations | ✅ All features work together | ⚡ **Maximum Flexibility** |
+| **Asymmetric Cuts** | ❌ Not supported | ✅ `cutlow=2, cuthigh=98` | **Superior Control** |
+| **Processing Reports** | ❌ Minimal feedback | ✅ `verbose=True` detailed summaries | **Better Insights** |
+| **Flag Generation** | ❌ Manual workaround needed | ✅ `genflag='_outlier'` automatic | **Streamlined Workflow** |
+| **Extreme Value Storage** | ❌ Values lost forever | ✅ `genextreme=('_low', '_high')` | **Data Preservation** |
+| **Variable-Specific Cuts** | ❌ Same cuts for all vars | ✅ `var_cuts={'wage':(1,99), 'ret':(5,95)}` | **Precision Control** |
+| **Combined Features** | ❌ Limited combinations | ✅ All features work together | **Maximum Flexibility** |
 
 ### **Performance & Usability**
-- ** Python Integration**: Seamless with pandas, numpy, matplotlib, seaborn
-- ** Better Documentation**: Comprehensive examples and clear parameter descriptions  
-- ** Modern API**: Pythonic design with intuitive parameter names
-- ** Open Source**: No licensing costs, community-driven improvements
-- ** Active Development**: Regular updates and new features
+- **Python Integration**: Seamless with pandas, numpy, matplotlib, seaborn
+- **Better Documentation**: Comprehensive examples and clear parameter descriptions
+- **Modern API**: Pythonic design with intuitive parameter names
+- **Open Source**: No licensing costs, community-driven improvements
+- **Active Development**: Regular updates and new features
 
 ##  **Why Choose pywinsor2 v0.2.0?**
 
 ### **For Current Stata Users**
-- ** Zero Learning Curve**: Same syntax, same results
-- ** Immediate Upgrade**: 6 exclusive new features unavailable in Stata
-- ** Cost Effective**: Reduce Stata license dependency
-- ** Better Analysis**: Verbose reporting and data preservation capabilities
+- **Zero Learning Curve**: Same syntax, same results
+- **Immediate Upgrade**: 6 exclusive new features unavailable in Stata
+- **Cost Effective**: Reduce Stata license dependency
+- **Better Analysis**: Verbose reporting and data preservation capabilities
 
 ### **For Python Users**  
-- ** Stata-Grade Reliability**: Battle-tested algorithms with 100% core feature compatibility
-- ** Native Integration**: Perfect pandas DataFrame compatibility
-- ** Research Ready**: Designed for econometrics and financial analysis
-- ** Production Ready**: Comprehensive error handling and validation
+- **Stata-Grade Reliability**: Battle-tested algorithms with 100% core feature compatibility
+- **Native Integration**: Perfect pandas DataFrame compatibility
+- **Research Ready**: Designed for econometrics and financial analysis
+- **Production Ready**: Comprehensive error handling and validation
 
 ### **For Data Scientists**
-- ** Precision Control**: Variable-specific cuts and asymmetric thresholds
-- ** Rich Metadata**: Detailed processing summaries and change tracking
-- ** Workflow Enhancement**: Automatic flagging and extreme value preservation
-- ** Feature Combinations**: All new features work seamlessly together
+- **Precision Control**: Variable-specific cuts and asymmetric thresholds
+- **Rich Metadata**: Detailed processing summaries and change tracking
+- **Workflow Enhancement**: Automatic flagging and extreme value preservation
+- **Feature Combinations**: All new features work seamlessly together
 
 ---
 
@@ -390,7 +391,7 @@ MIT License
 - **[StatsPAI](https://github.com/brycewang-stanford/StatsPAI/)** - StatsPAI = Stats + Econometrics + ML + AI + LLMs
 
 
-## 👨‍💻 Author & Maintenance
+## Author & Maintenance
 
 **Bryce Wang** - brycew6m@stanford.edu
 

@@ -5,7 +5,7 @@ This package provides tools for winsorizing and trimming data,
 equivalent to Stata's winsor2 command functionality.
 """
 
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 __author__ = "Bryce Wang"
 __email__ = "brycew6m@stanford.edu"
 
