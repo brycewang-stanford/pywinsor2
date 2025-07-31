@@ -184,9 +184,10 @@ def test_group_processing():
                              verbose=True, label=True)
     
     print(f"\nGroup processing results:")
-    group_details = summary['processing_details']['wage']['group_details']
-    for group, details in group_details.items():
-        print(f"  {group}: {details['changed']} observations changed")
+    # Check that processing was successful
+    assert 'wage' in summary['variables_processed']
+    assert summary['observations_changed']['wage'] > 0
+    print(f"  Total observations changed: {summary['observations_changed']['wage']}")
     
     # Compare group ranges
     print(f"\nWinsorized wage ranges by group:")
@@ -194,6 +195,10 @@ def test_group_processing():
         mask = data['industry'] == industry
         wages = result.loc[mask, 'wage_w']
         print(f"  {industry}: ${wages.min():.0f} - ${wages.max():.0f}")
+    
+    # Verify results
+    assert result.shape[0] == data.shape[0]
+    assert 'wage_w' in result.columns
     
     return result
 
