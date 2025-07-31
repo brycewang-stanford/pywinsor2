@@ -5,7 +5,7 @@ This module contains helper functions for input validation,
 percentile computation, and other supporting functionality.
 """
 
-from typing import List, Optional, Tuple, Union
+from typing import Dict, List, Optional, Tuple, Union
 
 import numpy as np
 import pandas as pd
@@ -19,11 +19,14 @@ def validate_inputs(
     replace: bool,
     trim: bool,
     by: Optional[Union[str, List[str]]],
+    genflag: Optional[str] = None,
+    genextreme: Optional[Tuple[str, str]] = None,
+    var_cuts: Optional[Dict[str, Tuple[float, float]]] = None,
 ) -> Tuple[
     pd.DataFrame, List[str], Tuple[float, float], Optional[str], Optional[List[str]]
 ]:
     """
-    Validate and standardize input parameters.
+    Validate and standardize input parameters with enhanced features.
 
     Parameters
     ----------
@@ -41,6 +44,12 @@ def validate_inputs(
         Whether to trim instead of winsorize
     by : str, list of str, or None
         Grouping variables
+    genflag : str or None
+        Suffix for flag variables
+    genextreme : tuple of str or None
+        Suffixes for extreme value variables
+    var_cuts : dict or None
+        Variable-specific cuts
 
     Returns
     -------
@@ -114,6 +123,40 @@ def validate_inputs(
         missing_by_vars = [var for var in by if var not in data.columns]
         if missing_by_vars:
             raise ValueError(f"Grouping variables not found in data: {missing_by_vars}")
+
+    # Validate new parameters
+    if genflag is not None:
+        if not isinstance(genflag, str):
+            raise TypeError("genflag must be a string")
+        if not trim:
+            raise ValueError("genflag can only be used with trim=True")
+
+    if genextreme is not None:
+        if not isinstance(genextreme, (tuple, list)) or len(genextreme) != 2:
+            raise TypeError("genextreme must be a tuple or list of 2 strings")
+        if not all(isinstance(s, str) for s in genextreme):
+            raise TypeError("genextreme elements must be strings")
+
+    if var_cuts is not None:
+        if not isinstance(var_cuts, dict):
+            raise TypeError("var_cuts must be a dictionary")
+        
+        # Validate that all keys are in varlist
+        invalid_vars = [var for var in var_cuts.keys() if var not in varlist]
+        if invalid_vars:
+            raise ValueError(f"var_cuts contains variables not in varlist: {invalid_vars}")
+        
+        # Validate cuts format for each variable
+        for var, var_cut in var_cuts.items():
+            if not isinstance(var_cut, (tuple, list)) or len(var_cut) != 2:
+                raise ValueError(f"var_cuts['{var}'] must be a tuple or list of 2 numbers")
+            
+            low, high = var_cut
+            if not all(isinstance(x, (int, float)) for x in var_cut):
+                raise TypeError(f"var_cuts['{var}'] must contain numeric values")
+            
+            if not (0 <= low <= 100) or not (0 <= high <= 100):
+                raise ValueError(f"var_cuts['{var}'] must be between 0 and 100")
 
     return data, varlist, cuts, suffix, by
 
